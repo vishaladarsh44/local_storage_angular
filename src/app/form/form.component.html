@@ -1,0 +1,31 @@
+<h1>Angular Form</h1>
+<form [formGroup]="login" (ngSubmit)="loginUser()" >
+    <input type="text" placeholder="Enter Name" formControlName="name">
+    <br>
+    <span style="color: red;" *ngIf="name && name.invalid && name.touched" > This input field is not valid*</span>
+    <br>
+    <br>
+    <input type="email" placeholder="Enter Email" formControlName="email" inputmode="email">
+    <br>
+    <span style="color: red;" *ngIf="email && email.invalid && email.touched" > This input field is not valid*</span>
+    <br>
+    <br>
+    <input type="number" placeholder="Enter phone" formControlName="number" inputmode="numeric">
+    <br>
+    <span style="color: red;" *ngIf="number && number.invalid && number.touched" > This input field is not valid*</span>
+    <br>
+    <br>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+    <br>
+    <span style="color: red;" *ngIf="password && password.invalid && password.touched" > This input field is not valid*</span>
+    <br>
+    <br>
+    <button>Submit</button>
+</form>
+
+<h1>Fetched Data</h1>
+<ul>
+    <li *ngFor="let item of user">
+    {{item.name}}    
+    </li>
+</ul>
